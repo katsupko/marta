@@ -1,0 +1,10 @@
+{% extends 'audit/base.html' %}
+
+{% block content %}
+<p>add new link:</p>
+<form action="{% url 'audit:new_link' %}" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button name="submit">add link</button>
+</form>
+{% endblock content %}

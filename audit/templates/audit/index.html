@@ -1,0 +1,12 @@
+{% extends 'audit/base.html' %}
+
+{% block content %}
+<a href="{% url 'audit:new_link' %}">add new link</a>
+<ul>
+    {% for link in links %}
+        <li>{{ link.id }} - {{ link.text }} - {{ link.check }}</li>
+    {% empty %}
+        <li>no records</li>
+    {% endfor %}
+</ul>
+{% endblock content %}
